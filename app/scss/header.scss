@@ -1,0 +1,146 @@
+.header {
+  z-index: 20;
+  background-color: var(--main);
+  &__tel {
+    margin-right: 108px;
+    a {
+      transition: ease 0.3s;
+      font-size: 20px;
+      line-height: 29px;
+      letter-spacing: 0em;
+    }
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+    flex-basis: 36%;
+    justify-content: end;
+    &-links {
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 8px;
+      &:last-child {
+        margin-right: 0;
+      }
+      img {
+        transition: ease 0.3s;
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+  &__wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0 24px;
+    border-bottom: 1px solid #fff;
+    flex-basis: 29%;
+    &-box {
+      display: flex;
+      align-items: center;
+      column-gap: 50px;
+    }
+  }
+}
+
+.logo {
+  position: relative;
+  margin-left: 100px;
+  &::after {
+    content: '';
+    width: 1px;
+    height: 16px;
+    background-color: #fff;
+    position: absolute;
+    right: -54px;
+    bottom: -24px;
+  }
+  &::before {
+    content: '';
+    width: 1px;
+    height: 16px;
+    background-color: #fff;
+    position: absolute;
+    left: -61px;
+    bottom: -24px;
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    column-gap: 34px;
+    z-index: 2;
+  }
+  &__item {
+    &-link {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 26px;
+      letter-spacing: 0em;
+      transition: all 0.2s ease;
+      &:hover {
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--white);
+      }
+    }
+  }
+}
+
+.header__box-links:hover img {
+  filter: brightness(0.6);
+}
+.header__tel:hover a {
+  filter: brightness(0.6);
+}
+
+.header__burger-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  span {
+    position: absolute;
+    width: 48%;
+    height: 2px;
+    background-color: var(--black);
+    top: 19px;
+    left: 10px;
+    transform: scale(1);
+    cursor: pointer;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--black);
+      transition: all 0.3s ease 0s;
+      bottom: -6px;
+      cursor: pointer;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: var(--black);
+      transition: all 0.3s ease 0s;
+      top: -6px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 1600px) {
+  .header__tel {
+    margin-right: 18px;
+  }
+}

@@ -1,0 +1,76 @@
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin button-filter() {
+  display: flex;
+  justify-content: center;
+  column-gap: 32px;
+  align-items: center;
+  margin-bottom: 24px;
+  button {
+    padding: 12px 24px;
+    border: 1px solid var(--black);
+    background-color: transparent;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    column-gap: 8px;
+    transition: ease 0.3s;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 90%;
+      left: 0;
+      width: 0;
+      height: 10%;
+      background-color: var(--black);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 90%;
+      left: 0;
+      width: 0;
+      height: 10%;
+      background-color: var(--black);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+    &:hover::before {
+      width: 35%;
+    }
+  }
+}
+
+@mixin title-sections() {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 60px;
+  margin-bottom: 48px;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+@mixin subtitle-sections() {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--black);
+  text-transform: uppercase;
+}

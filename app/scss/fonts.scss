@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Tharlon';
+  src: url(../fonts/Tharlon-Regular.woff) format('woff');
+  src: url(../fonts/Tharlon-Regular.woff2) format('woff'),
+    url(../fonts/Tharlon-Regular.ttf) format('truetype'),
+    url(../fonts/Tharlon-Regular.eot) format('embedded-opentype'),
+    url(../fonts/Tharlon-Regular.svg) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Tharlon', sans-serif;
+}

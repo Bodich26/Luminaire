@@ -1,0 +1,59 @@
+@import 'mixins';
+
+.collection {
+  overflow: hidden;
+  padding: 44px 0 90px;
+  &__subtitle {
+    @include subtitle-sections();
+  }
+  &__title {
+    @include title-sections();
+  }
+  &__item {
+    text-align: center;
+    &-title {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.16em;
+      color: var(--black);
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+    &-link {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.1em;
+      color: var(--black);
+      font-weight: 400;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--black);
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .collection__title {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 25px;
+  }
+  .collection__item-title {
+    font-size: 20px;
+    line-height: 21px;
+  }
+  .collection__item-link {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .collection__title {
+    font-size: 24px;
+    margin-bottom: 19px;
+  }
+  .collection__subtitle {
+    font-size: 15px;
+    line-height: 10px;
+  }
+}

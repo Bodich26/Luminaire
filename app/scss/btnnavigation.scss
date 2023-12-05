@@ -1,0 +1,120 @@
+.mobile__box-item {
+  display: flex;
+  z-index: 2;
+  transition: ease 0.3s;
+}
+.mobile__box {
+  transition: ease 0.3s;
+}
+.mobile__box.js-open {
+  background-color: transparent;
+  transition: ease 0.3s;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 35px;
+  position: absolute;
+  right: 0;
+  top: 92px;
+  z-index: 2;
+}
+.mobile__box.js-open .mobile__box-item {
+  display: flex;
+}
+
+.mobile__burger-btn {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+  right: 7px;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.mobile__burger-btn span {
+  position: absolute;
+  width: 48%;
+  height: 2px;
+  background-color: var(--white);
+  top: 19px;
+  left: 10px;
+  transform: scale(1);
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.mobile__burger-btn span:nth-child(1) {
+  transform: translateY(-6px);
+}
+.mobile__burger-btn span:nth-child(3) {
+  transform: translateY(6px);
+}
+
+.js-open .nav {
+  position: absolute;
+  left: 0;
+  top: 92px;
+}
+.js-open .nav__list {
+  display: flex !important;
+  position: absolute;
+  left: 0;
+  top: 92px;
+}
+.mobile__burger-btn.js-open span:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0) rotate(45deg);
+}
+.mobile__burger-btn.js-open span:nth-child(2) {
+  opacity: 0;
+}
+.mobile__burger-btn.js-open span:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0) rotate(-45deg);
+}
+
+.mobile__burger-btn {
+  display: none;
+}
+
+@media (max-width: 1450px) {
+  .mobile__burger-btn {
+    display: block;
+  }
+  .mobile__box-item {
+    display: none;
+  }
+  .header__tel {
+    display: none;
+  }
+  .nav__list {
+    display: none !important;
+  }
+  .logo {
+    margin: 0 !important;
+  }
+  .header__box {
+    flex-basis: 0 !important;
+  }
+  .header__wrap-box {
+    column-gap: 0 !important;
+  }
+}
+@media (max-width: 750px) {
+  .mobile__box-item {
+    flex-direction: column;
+    row-gap: 22px;
+  }
+  .mobile__box.js-open {
+    top: 110px;
+  }
+}
+@media (max-width: 450px) {
+  .mobile__box.js-open {
+    top: 140px;
+  }
+}

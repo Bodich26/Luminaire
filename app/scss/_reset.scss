@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* Сброс стилей */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 400;
+  overflow-x: hidden;
+  color: var(--white);
+  background-color: var(--white);
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: var(--white);
+}
+ol,
+ul {
+  list-style: none;
+}
+button {
+  font-family: 'TharLon', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+input {
+  outline: none;
+}
+p {
+  font-weight: 500;
+}

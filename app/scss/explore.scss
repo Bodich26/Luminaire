@@ -1,0 +1,209 @@
+@import 'mixins';
+.explore {
+  padding-bottom: 121px;
+  &__subtitle {
+    @include subtitle-sections();
+  }
+  &__title {
+    @include title-sections();
+  }
+  &__button {
+    @include button-filter();
+  }
+  &__block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  &__item {
+    text-transform: uppercase;
+    color: var(--black);
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    cursor: pointer;
+    &-brand {
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.1em;
+      font-weight: 400;
+      color: #999;
+    }
+    &-sale {
+      position: absolute;
+      left: 0;
+      bottom: 24%;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 12px;
+      letter-spacing: 0.1em;
+      background-color: var(--main);
+      color: var(--white);
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      span {
+        width: 23px;
+        height: 1px;
+        background-color: var(--white);
+      }
+      &::before {
+        content: '';
+        width: 23px;
+        height: 1px;
+        background-color: var(--white);
+      }
+    }
+    &-title {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: 0.16em;
+      color: var(--black);
+      margin: 8px 0 8px;
+    }
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 16px;
+    }
+    &-price {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: 0em;
+      color: var(--main);
+      &-disc {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        color: var(--red);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0em;
+        em {
+          color: #999;
+          font-weight: 400;
+          font-style: normal;
+          text-decoration: line-through;
+          font-size: 16px;
+          line-height: 28px;
+          letter-spacing: 0em;
+        }
+      }
+    }
+    &-box {
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      transition: opacity 0.3s;
+    }
+    &-links {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.1em;
+      color: #333;
+      transition: ease 0.3s;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background-color: #333;
+        bottom: -2px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+      &:hover {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+    &-add {
+      display: flex;
+      align-items: center;
+      img {
+        width: 25px;
+      }
+    }
+  }
+}
+
+.js-item__hide {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.explore__item:hover .explore__item-box {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1555px) {
+  .explore__item-sale {
+    bottom: 30%;
+  }
+}
+@media (max-width: 1390px) {
+  .explore__block {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1120px) {
+  .explore__block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .explore__item-title {
+    font-size: 19px;
+    margin: 0;
+  }
+  .explore__item-list {
+    display: block;
+  }
+}
+
+@media (max-width: 660px) {
+  .explore__item-sale {
+    bottom: 40%;
+  }
+}
+@media (max-width: 550px) {
+  .explore__block {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .explore__item-list {
+    display: flex;
+  }
+  .explore__item-sale {
+    bottom: 30%;
+  }
+  .explore__title {
+    font-size: 36px;
+    line-height: 46px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  .explore__title {
+    font-size: 24px;
+    margin-bottom: 19px;
+  }
+  .explore__subtitle {
+    font-size: 15px;
+    line-height: 10px;
+  }
+}
